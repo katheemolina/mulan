@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personajes de Mulan · Disney API</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header class="encabezado">
+    <p class="encabezado__etiqueta">Ejemplo de consumo de API</p>
+    <h1>Personajes de <span>Mulan</span></h1>
+    <p class="encabezado__fuente">
+      Datos de <a href="https://disneyapi.dev/docs/" target="_blank">disneyapi.dev</a>
+    </p>
+  </header>
+
+  <main>
+    <!-- Filtros: cada botón tiene un data-film con el nombre exacto que usa la API -->
+    <nav class="filtros" aria-label="Filtrar por película">
+      <button class="filtro activo" data-film="todas">Todas</button>
+      <button class="filtro" data-film="Mulan (1998 film)">Mulan (1998)</button>
+      <button class="filtro" data-film="Mulan II">Mulan II</button>
+      <button class="filtro" data-film="Mulan (2020 film)">Mulan (2020)</button>
+    </nav>
+
+    <input id="buscador" class="buscador" type="search" placeholder="Buscar personaje por nombre...">
+
+    <!-- Acá JavaScript muestra mensajes de "cargando" o de error -->
+    <p id="estado" class="estado">Cargando personajes...</p>
+
+    <!-- Acá JavaScript dibuja las tarjetas -->
+    <section id="grilla" class="grilla"></section>
+  </main>
+
+  <!-- Ventana de detalle: se llena con un segundo pedido a la API -->
+  <dialog id="detalle" class="detalle">
+    <button id="cerrar" class="detalle__cerrar" aria-label="Cerrar">×</button>
+    <div id="detalle-contenido"></div>
+  </dialog>
+
+  <script src="app.js"></script>
+</body>
+</html>
